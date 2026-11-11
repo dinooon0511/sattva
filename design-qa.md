@@ -63,3 +63,13 @@ Initial public URL returned HTTP 200 but source HTML referenced `/src/main.jsx` 
 ## Limits and follow-up
 
 No claim of full WCAG compliance; screen reader, systematic contrast measurement and real media-caption review remain separate checks. No working payment, booking, account, author verification, messaging or payout backend. All profiles, slots, prices, sample programmes and revenue assumptions are illustrative. P3: exact source-font matching, slightly stronger contour lines, and deferred loading of long research documents if production analytics show a need. Build reports a large-chunk warning (about 172 KB gzip for combined JS), not a functional failure.
+
+## Public deployment revalidation — completed
+
+Published application: https://dinooon0511.github.io/sattva/. GitHub Actions run 43041132580 completed successfully for source ff430bc5d5d8022f88071adef65ea29498c69cbf. Fresh root HTML references `./assets/index-TE84u-Jt.js` and built CSS, no `/src/main.jsx`. The prior raw-source publication problem is resolved.
+
+`node tests/live.mjs` completed five public browser scenarios: v2 homepage/workspace; Petersburg offline course and demonstration checkout; YOG commercial formats; audit including source screenshot loading; business calculator including zero-margin boundary. No browser runtime, console or asset errors in the successful run. Public browser evidence: `artifacts/public-v2-home.png` and `artifacts/public-v2-course.png`, inspected after capture.
+
+The environment CA is available to Node but not Chromium's native root store. Public HTTPS requests in this test use Playwright API fetch through the inherited proxy with the supplied trusted CA, then route the verified response to Chromium for rendering. TLS verification was preserved; no ignore-certificate option was used. A first request during publication hit a transient upstream gateway timeout, recorded as an unsuccessful run; the fresh connection after deployment completed passed.
+
+The standalone HTML export also passed a separate browser check for course navigation and embedded audit screenshots. It requests no external assets and produces no runtime errors. `file://` opening is restricted by this managed browser policy; the self-contained artifact was validated through a minimal local HTTP server.
