@@ -33,6 +33,7 @@ try {
   await expect(
     p.locator(".sidebar").getByRole("button", { name: /Бизнес и рост/ }),
   ).toBeVisible();
+  await app.locator("img").evaluateAll(imgs => Promise.all(imgs.map(im => im.decode())));
   await p.screenshot({ path: "artifacts/public-v2-home.png", fullPage: true });
   console.log("PASS public homepage, built assets and v2 workspace");
   await app
@@ -42,6 +43,7 @@ try {
   await app.getByRole("button", { name: "Офлайн", exact: true }).click();
   await app.getByRole("button", { name: /Четыре дня баланса/ }).click();
   await expect(app.locator(".purchase-dock")).toContainText(/18\s000/);
+  await app.locator("img").evaluateAll(imgs => Promise.all(imgs.map(im => im.decode())));
   await app.screenshot({ path: "artifacts/public-v2-course.png" });
   await app
     .getByRole("button", { name: "Приобрести · демо", exact: true })
