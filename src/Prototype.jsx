@@ -100,6 +100,18 @@ const Empty = ({ title, text, action, onClick }) => (
   </div>
 );
 const Notice = ({ children }) => <p className="soft-note">{children}</p>;
+// Names supplied by the project owner. No dates, services or outcomes inferred.
+const completedProjects = ["Шишкин пар", "Nordic Spa", "Kelo бани"];
+const CompletedProjects = () => (
+  <ol className="completed-projects" aria-label="Проведённые проекты YOG">
+    {completedProjects.map((name, i) => (
+      <li key={name}>
+        <span className="project-index">0{i + 1}</span>
+        <h3>{name}</h3>
+      </li>
+    ))}
+  </ol>
+);
 const Label = ({ children, ...p }) => {
   const content = React.Children.toArray(children);
   const name = content
@@ -711,8 +723,8 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 брифа.
               </p>
               <Row
-                title="Как мы создаём события"
-                sub="От замысла до последней детали"
+                title="Проведённые проекты YOG"
+                sub="Шишкин пар · Nordic Spa · Kelo бани"
                 onClick={() => go("cases")}
               />
               <Notice>
@@ -2340,9 +2352,14 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
           {route === "cases" && (
             <>
               <Head
-                title="Как рождается событие"
-                sub="Соавторство, в котором понятен каждый шаг."
+                title="Проведённые проекты"
+                sub="YOG"
               />
+              <CompletedProjects />
+              <h2 className="case-process-title">Как рождается событие</h2>
+              <p className="case-process-intro">
+                Соавторство, в котором понятен каждый шаг.
+              </p>
               {[
                 [
                   "01",
@@ -2376,19 +2393,6 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                   <p>{d}</p>
                 </div>
               ))}
-              <h3 className="section-space-title">
-                Иллюстрация, а не реальный кейс
-              </h3>
-              <p>
-                День рождения для 10 близких: мягкая практика, круг пожеланий и
-                совместный стол. Другая задача — корпоратив на 30 человек с
-                добровольными короткими практиками и отдельной зоной отдыха.
-              </p>
-              <Notice>
-                Реальные кейсы, отзывы и фотографии добавляются только с
-                согласия участников. В прототипе нет выдуманных результатов
-                клиентов.
-              </Notice>
               <Button onClick={() => go("event")}>Обсудить мою идею</Button>
             </>
           )}

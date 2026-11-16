@@ -1,7 +1,13 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 let html = readFileSync("dist/index.html", "utf8");
 const js = html.match(/<script[^>]*src="([^"]+)"[^>]*><\/script>/)[1];
 const css = html.match(/<link[^>]*href="([^"]+\.css)"[^>]*>/)[1];
+const stylesheet = readFileSync("dist/" + css.replace(/^\.\//, ""), "utf8")
+  .replace(/url\(([^)]+\.ttf)\)/g, (_, fontPath) => {
+    const font = readFileSync(resolve("dist", dirname(css), fontPath));
+    return `url(data:font/ttf;base64,${font.toString("base64")})`;
+  });
 let code = readFileSync("dist/" + js.replace(/^\.\//, ""), "utf8");
 for (const file of [
   "contour.png",
@@ -27,7 +33,7 @@ html = html
   .replace(
     /<link[^>]*href="[^"]+\.css"[^>]*>/,
     () =>
-      `<style>${readFileSync("dist/" + css.replace(/^\.\//, ""), "utf8")}</style>`,
+      `<style>${stylesheet}</style>`,
   )
   .replace(
     "./favicon.svg",

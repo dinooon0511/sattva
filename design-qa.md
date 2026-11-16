@@ -1,77 +1,47 @@
-# Design QA · version 2
+# Design QA · Manrope и оливковая палитра
 
 final result: passed
 
-## Scope
+Дата: 16 ноября 2026. Исторический отчёт предыдущей версии сохранён в `docs/visual-review/previous-v2-qa.md`.
 
-User requested an extensive extension of the existing first-reference-inspired design, not a new visual direction. SATTVA now owns all personal practices, meditation, courses and teachers. YOG owns commercial event production. The research workspace now includes audit and business strategy.
+## Цель и доказательства
 
-Source visual truth: `/workspace/generated_images/exec-a4dcd4ba-6dce-4892-852e-f608ba7d68c5.png`, first selected reference. Source raster 852 × 1846 normalized to 390 × 844 CSS pixels. Current homepage evidence: `artifacts/v2-home.png`, 390 × 844, deviceScaleFactor 1, SATTVA homepage with fresh storage. Source and current implementation viewed together in `artifacts/v2-comparison.png`; focused control region: `artifacts/v2-comparison-focus.png`.
+Адаптировать типографику, сетку и минималистичную подачу nomadpeople.ru к существующему приложению SATTVA / YOG. Это не задача точного клонирования: структура приложения и интерактивные сценарии должны сохраниться, чёрный исключён, изображения студии не заимствуются.
 
-Current production screenshots: `artifacts/v2-desktop.png` (1440 × 1200 viewport, full page), `v2-mobile-workspace.png` (390 × 1000 viewport), `v2-courses.png`, `v2-offline-course.png`, `v2-teachers.png`, `v2-teacher.png`, `v2-yog-formats.png`, `v2-economics.png`, `v2-audit.png`, `v2-cjm.png`. Each reviewed after capture. Public audit screenshots in `public/audit` were captured before this implementation from the original local commit 9fdd687 and inspected individually.
+Source visual truth: `docs/visual-review/01-reference-desktop.png`, `02-reference-menu.png`, `03-reference-mobile.png`. Источник открыт и захвачен в текущем сеансе, принятые файлы просмотрены. Кадр мобильного загрузчика отклонён, вместо него принят загруженный экран.
 
-Browser: system Chromium with Playwright; native desktop/browser control tools were unavailable. Screenshots are browser-rendered evidence. Production preview port 4174. Local browser tests and production-output browser tests completed all 22 scenarios without page errors or console errors.
+Implementation: `artifacts/design-desktop.png`, `artifacts/design-mobile.png`, `docs/visual-review/06-yog-projects.png`. Системный Chromium, Playwright, deviceScaleFactor 1. Общий браузер не был доступен отдельным инструментом; выполнены реальные браузерные проверки и просмотр сохранённых скриншотов.
 
-## Findings, fixes and accepted changes
+Desktop reference: 1440 × 1000 px, CSS viewport 1440 × 1000. Implementation viewport capture: `artifacts/design-desktop-viewport.png`, 1440 × 1000 px. Полностраничный скриншот реализации дополнительно показывает нижнюю навигацию и подписи.
 
-1. Prior P2: course and teacher actions were below long descriptions. Fixed with persistent price/action dock above navigation. Verified on offline course, teacher and class screens; scrollable body remains accessible.
-2. Prior P2: catalogue too shallow for displayed categories. Now 24 materials with multiple meditations, yoga video examples, breathing, podcasts and webinars. Media filtering and empty-state recovery verified.
-3. Prior P1 product ambiguity: YOG and SATTVA shared practice positioning. Navigation is now separated: five SATTVA destinations versus four event-focused YOG destinations; shared purchases remain accessible in «Моё». Switching from a product to SATTVA is intentional.
-4. Input label lookup found an ambiguity with nested selects during testing. Explicit labels were attached to controls; final functional run passes all affected forms.
-5. Empty matching results initially repeated «Изменить подбор». Removed duplicate action, reran the path.
-6. Intermediate test interruption caused by Vite hot reload during formatting was not counted as a pass. Another test disambiguated the «Курсы» profile tab from the persistent navigation. Final results use a stable production build.
-7. Intentional expansion: the homepage continues below the fold with catalogue, teachers and an offline programme. First-reference hierarchy, white surface, serif hero and contour artwork are preserved. Five bottom destinations and the additional homepage content are user-requested product changes, not accidental source drift.
+Mobile reference: 390 × 844 px, CSS viewport 390 × 844. Implementation viewport capture: `artifacts/design-mobile-viewport.png`, 390 × 844 px. Полностраничный захват: viewport 390 × 1000. Само приложение имеет отдельный экран 390 × 844 CSS px на большом экране, сужающийся на небольшом телефоне; это сохранённая инфраструктура прототипа.
 
-## Five fidelity surfaces
+Full-view combined comparisons: `docs/visual-review/04-comparison-desktop.png` и `05-comparison-mobile.png`. Оба изображения просмотрены после сохранения. Desktop-кадры равномерно уменьшены до 704 px в сравнении; mobile-кадры показаны 1:1. Состояние: первая загрузка, SATTVA home / референс home. Это разные продукты, поэтому не сравнивается расположение каждого контрола 1:1.
 
-- Typography: serif hero and programme titles with readable sans-serif controls; same visual family as the selected reference. Exact source font unspecified. Long course names wrap without clipping; sticky prices remain legible.
-- Spacing and layout: fixed 390 × 844 application canvas, independent scroll, persistent bottom navigation; desktop sidebar and mobile horizontal project menu. No whole-page horizontal overflow at 375, 390 and 768 CSS pixels. The CJM itself intentionally scrolls horizontally.
-- Color/tokens: restrained black, white and neutral light surfaces. Active state also uses labels and pressed state. No color-only meaning in purchase or cancellation states.
-- Imagery: original generated contour raster reused. No invented testimonials, teacher photos, treatment outcomes or fake verification badges. Source audit screens are actual screenshots, not generated reconstructions.
-- Copy: demonstration boundaries explicit at payment, media, qualification, addresses, author drafts, notifications and economics. Offline course explains dates, programme, inclusions and exclusions. YOG explains estimates and additional costs.
+Focused regions: отдельно просмотрены `artifacts/after-home.png` и `06-yog-projects.png` в натуральном размере; проверены типографика, состояния переключателя бренда, список проектов, нижняя навигация, контраст текста и сохранение прокрутки.
 
-## Functional evidence
+## История исправлений
 
-22 completed scenarios on the stable production build:
-1. Homepage, artwork and brand navigation.
-2. Multiple meditations, audio/video filters and video-player demonstration.
-3. Matching empty state, recovery and favourites.
-4. Teacher filtering, offline package, time and checkout.
-5. Cancellation confirmation and preserved history.
-6. Offline calendar filtering and booking.
-7. Waitlist joining and removal.
-8. Four-day Petersburg programme, exclusions and enrollment.
-9. Free online sample, purchase, lessons and persistent progress.
-10. Course-search empty state and reset.
-11. Club boundaries, activation and cancellation without loss of courses.
-12. Gift amount and explicit nonmonetary certificate.
-13. Author draft, access terms and unpublished state.
-14. Teacher slot creation and commission model.
-15. Commercial YOG navigation, brand brief and proposal example.
-16. Preferences without message sending.
-17. Fifteen JTBD, filters and live scenario link.
-18. Seven CJM with touchpoints and process owners.
-19. Thirteen User Flow and proposal stages.
-20. Audit evidence and filtering by lens.
-21. Business calculator, zero-margin boundary and roadmap.
-22. Mobile/tablet reflow without viewport overflow.
+- P2, промежуточный мобильный экран: переносились названия пунктов проектного меню. Причина — повреждённое свойство white-space при замене старой палитры. Свойство восстановлено; новый мобильный захват и проверка пяти ширин подтверждают исправление.
+- P2, промежуточная иллюстрация: полное sepia-тонирование скрывало тонкие контуры. Уменьшена сила фильтра, сохранены исходный растр и различимые линии. Новый desktop-захват просмотрен.
+- Автотест цвета сначала учитывал непечатаемое SVG-свойство fill у HTML-элементов. Проверка уточнена: fill/stroke проверяются у SVG, остальные свойства — у всех видимых элементов. Реальные цветовые запреты сохранены.
+- Проверка клавиатурного фокуса переведена в клавиатурный режим через Tab, вместо программного фокуса после мыши. Видимый оливковый outline подтверждён.
+- Остаточных P0/P1/P2 визуальных проблем в проверенных состояниях не выявлено.
 
-## Publication issue found during audit
+## Пять поверхностей проверки
 
-Initial public URL returned HTTP 200 but source HTML referenced `/src/main.jsx` (404); favicon also 404. Public flows were therefore blocked. Downloaded previous Pages artifact contained correctly built HTML; the raw source being served publicly was a publication/source mismatch rather than a local build error. `scripts/verify-dist.mjs` now fails if production HTML points to source and verifies required assets. Publication must be verified with a fresh browser-rendered public page, not a build badge. Public revalidation outcome will be added after deployment.
+1. Типографика: Manrope, включая кириллицу, локальный variable TTF, веса 200–800; загрузка проверена в браузере. Заголовки без засечек, плотный межбуквенный интервал, спокойный размер управляющего текста. Длинные названия переносятся, не обрезаются.
+2. Сетка и ритм: существующая структура «меню / приложение / сценарии» сохранена. Увеличены отступы, убраны тени экрана и скругления основных кнопок, добавлены единые разделители. Нет переполнения страницы на 375/390/768/1024/1440 px; нижние действия доступны.
+3. Цвета: оливковый #626143, слоновая кость, молочный, пастельный зелёный, тёплый жёлтый. Проверка вычисленных цветов всех разделов не выявила чёрных и близких к чёрному цветов. В трёх итоговых скриншотах home desktop/mobile и YOG projects — ноль пикселей, у которых все RGB-каналы ниже 70. Прозрачность и сглаживание учитываются отдельно; это не полная сертификация доступности.
+4. Изображения: исходный контурный растр сохранён и тепло тонирован в представлении. Исходные скриншоты старого аудита не перерисованы; цветовой фильтр применяется только при показе. Нет фотографий или логотипов реальных кейсов, которых владелец не предоставлял. Favicon использует оливковый цвет.
+5. Контент: только три названия проведённых проектов, предоставленные владельцем. Нет выдуманных дат, отзывов или результатов. Процесс события отделён от проектов, прежние вымышленные примеры убраны. Обозначения демоплатежей, уведомлений, уроков и записей сохранены.
 
-## Limits and follow-up
+## Проверки
 
-No claim of full WCAG compliance; screen reader, systematic contrast measurement and real media-caption review remain separate checks. No working payment, booking, account, author verification, messaging or payout backend. All profiles, slots, prices, sample programmes and revenue assumptions are illustrative. P3: exact source-font matching, slightly stronger contour lines, and deferred loading of long research documents if production analytics show a need. Build reports a large-chunk warning (about 172 KB gzip for combined JS), not a functional failure.
+- `npm run build` и `node scripts/verify-dist.mjs`: успешно; CSS-синтаксис исправлен. Осталось существующее предупреждение о размере JS-chunk, не блокирующее работу.
+- `npm test` на dev: 22 сценария прошли, без ошибок console/runtime.
+- `TEST_URL=http://127.0.0.1:4174 npm test`: 22 сценария production-сборки прошли, без ошибок console/runtime.
+- `node tests/design.mjs`: шрифт, цвета разделов, три проекта, навигация YOG, пять ширин и клавиатурный фокус — успешно.
+- Автономный HTML экспорт собирается; локальный шрифт включается в файл как data URL.
 
-## Public deployment revalidation — completed
-
-Published application: https://dinooon0511.github.io/sattva/. GitHub Actions run 43041132580 completed successfully for source ff430bc5d5d8022f88071adef65ea29498c69cbf. Fresh root HTML references `./assets/index-TE84u-Jt.js` and built CSS, no `/src/main.jsx`. The prior raw-source publication problem is resolved.
-
-`node tests/live.mjs` completed five public browser scenarios: v2 homepage/workspace; Petersburg offline course and demonstration checkout; YOG commercial formats; audit including source screenshot loading; business calculator including zero-margin boundary. No browser runtime, console or asset errors in the successful run. Public browser evidence: `artifacts/public-v2-home.png` and `artifacts/public-v2-course.png`, inspected after capture.
-
-The environment CA is available to Node but not Chromium's native root store. Public HTTPS requests in this test use Playwright API fetch through the inherited proxy with the supplied trusted CA, then route the verified response to Chromium for rendering. TLS verification was preserved; no ignore-certificate option was used. A first request during publication hit a transient upstream gateway timeout, recorded as an unsuccessful run; the fresh connection after deployment completed passed.
-
-The standalone HTML export also passed a separate browser check for course navigation and embedded audit screenshots. It requests no external assets and produces no runtime errors. `file://` opening is restricted by this managed browser policy; the self-contained artifact was validated through a minimal local HTTP server.
-
-Public screenshot readiness follow-up: the first homepage capture occurred before contour-image decoding, so that visual capture was rejected. Updated live checks explicitly wait for images to decode before capture. Repeated public run passed all five scenarios; final `artifacts/public-v2-home.png` includes the loaded contour illustration and was inspected again.
+Полный аудит WCAG и тестирование скринридером не выполнялись. Клавиатурный фокус, текущие сценарии и отсутствие горизонтального переполнения проверены отдельно. Публикация и проверки публичного URL фиксируются после фактического выполнения, а не выводятся из локального успеха.

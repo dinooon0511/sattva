@@ -376,7 +376,7 @@ export default function BusinessViews({ section, openScenario }) {
                 </p>
                 <p className="research-note">{entry.kpi}</p>
                 <button
-                  className="black-button"
+                  className="olive-button"
                   onClick={() => openScenario(entry.route)}
                 >
                   Пройти воронку в демо <Icon as={ArrowRight} />

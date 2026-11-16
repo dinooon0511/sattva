@@ -110,7 +110,7 @@ function App() {
             setBrand("SATTVA");
           }}
         >
-          sattva<span className="wordmark-dot"> / yog</span>
+          sattva<span className="wordmark-dot"> / YOG</span>
         </a>
         <div className="side-caption">ПРОСТРАНСТВО БАЛАНСА</div>
         <div className="side-rule" />
@@ -542,7 +542,7 @@ function Research({ section, openScenario }) {
                     </p>
                   )}
                   <button
-                    className="black-button"
+                    className="olive-button"
                     onClick={() => openScenario(f.route)}
                   >
                     Пройти сценарий <I icon={ArrowRight} />
