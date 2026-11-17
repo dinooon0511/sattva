@@ -1,0 +1,87 @@
+{
+  "source": "User supplied Архив.zip",
+  "selected_count": 9,
+  "files": [
+    {
+      "archive_file": "Unknown-70.png",
+      "archive": "Архив.zip",
+      "source_sha256": "8a9e0adc9355d83f982d9fca6ac356cc5ec771eaf27301e7fbf3e9738718bf60",
+      "application_file": "src/assets/incense-hands.webp",
+      "kind": "ritual",
+      "webp_sha256": "9a79b86590d557e54e0b5f3260c2cd913b64cbfc4e06ad7b939025b0f3c4f49f",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-71.png",
+      "archive": "Архив.zip",
+      "source_sha256": "d1da3ca95073982cab5a1d13589b3ef5a5076305b22a5eba93e97cae0ddcf2bd",
+      "application_file": "src/assets/water-hands.webp",
+      "kind": "water",
+      "webp_sha256": "3ee1084ef0e158d683b3dc8392bc15dbbc06c16ecc00cefd7132b16426e5630c",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-72.png",
+      "archive": "Архив.zip",
+      "source_sha256": "ef2a4d4331596fd7c12c8abea47f9b4a63d12c93cf6c92ad7da78d46f1e7ab78",
+      "application_file": "src/assets/golden-bowl.webp",
+      "kind": "bowl",
+      "webp_sha256": "7dff3d6b70e5bcf7e4d8e9c8782eb5d3888cc3495d2c2c42a3941b8c0b4a7fc0",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-75.png",
+      "archive": "Архив.zip",
+      "source_sha256": "5f32d443d0d78f21dd095ae9ec5bffc97de0985e16b4309869b0961136c6feeb",
+      "application_file": "src/assets/yoga-pose.webp",
+      "kind": "yoga",
+      "webp_sha256": "47fce5bc213bac0348e64f64bea84f41fd1bfd9acdb2638c6769d0232b00ccc8",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-76.png",
+      "archive": "Архив.zip",
+      "source_sha256": "45f256583597297d5c8533de24342d9aca4de48f718d3c36c2c77cc216097b78",
+      "application_file": "src/assets/sun-movement.webp",
+      "kind": "flow",
+      "webp_sha256": "4f81691cda5b5926050bd382e2f09710d2ead41e62ebe1e43b550ff00a2be2ea",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-68.png",
+      "archive": "Архив.zip",
+      "source_sha256": "b79926d16f5e3a2c0c7b66b4a8f2fd7d9b79b271239abb9730f07a1feb1c97a0",
+      "application_file": "src/assets/sheer-fabric.webp",
+      "kind": "fabric",
+      "webp_sha256": "a0b6f4a4f8d6232abdc57724d7f81ebca8a18dbacdd31c5ac7b6770a24e12444",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-69.png",
+      "archive": "Архив.zip",
+      "source_sha256": "fa748cb05fe1461d0f1edd93ab153fe2ac457f38e78994beea928d1347021c7c",
+      "application_file": "src/assets/body-detail.webp",
+      "kind": "movement",
+      "webp_sha256": "8fb6b5e17d6ad5eb2fc91458cfc0367fb486147c174df983d61250501bb9c8ea",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-73.png",
+      "archive": "Архив.zip",
+      "source_sha256": "edf86375c3a3d161ad5d9e563bd7b57bdfe84ad99f1f96a1fcb53db7e3a28daf",
+      "application_file": "src/assets/spa-ritual.webp",
+      "kind": "spa",
+      "webp_sha256": "f0b7b6658b21dc5cde46d5d2858fb3a88f7970411201134e001ea9f6787e9a1a",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    },
+    {
+      "archive_file": "Unknown-74.png",
+      "archive": "Архив.zip",
+      "source_sha256": "9eb13e92497bccf018ecca3a76a09c9ab7c625847827edc4c1ee5730511f4e66",
+      "application_file": "src/assets/tea-pouring.webp",
+      "kind": "tea",
+      "webp_sha256": "78c1e81491f60ef356687cc7702e83610981ef4f72e78101ae66175bf3fa21d5",
+      "processing": "WebP encoding only; no content edits. Display crop and milk compositing are CSS."
+    }
+  ]
+}

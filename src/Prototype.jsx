@@ -33,7 +33,7 @@ import {
   plans,
   rituals,
 } from "./product";
-import { visuals } from "./visuals";
+import { visuals, practiceVisual, courseVisual } from "./visuals";
 const Icon = ({ as: C, ...props }) => (
   <C size={21} weight="light" aria-hidden="true" {...props} />
 );
@@ -63,9 +63,10 @@ const Button = ({ children, onClick, secondary = false, ...p }) => (
     {children}
   </button>
 );
-const Row = ({ title, sub, onClick, icon: C = ArrowRight, tag }) => (
-  <button className="app-row" onClick={onClick}>
-    <span>
+const Row = ({ title, sub, onClick, icon: C = ArrowRight, tag, image }) => (
+  <button className={"app-row" + (image ? " media-row" : "")} onClick={onClick}>
+    {image && <span className="row-art"><img src={visuals[image].src} alt="" loading="lazy" decoding="async" /></span>}
+    <span className="row-copy">
       {tag && <small className="row-tag">{tag}</small>}
       <strong>{title}</strong>
       {sub && <small>{sub}</small>}
@@ -87,7 +88,7 @@ const Chips = ({ items, value, onChange, label }) => (
     ))}
   </div>
 );
-const Art = ({ kind }) => {
+const Art = ({ kind = "water" }) => {
   const image = visuals[kind];
   return image ? (
     <span className="photo-panel" data-visual={kind}>
@@ -95,6 +96,12 @@ const Art = ({ kind }) => {
     </span>
   ) : <img className="contour" src="./contour.png" alt="" />;
 };
+const PhotoScene = ({ kind, children }) => (
+  <section className="photo-scene" data-scene={kind}>
+    <img className="scene-backdrop" src={visuals[kind].src} alt="" decoding="async" />
+    <div className="scene-glass">{children}</div>
+  </section>
+);
 const Empty = ({ title, text, action, onClick }) => (
   <div className="empty">
     <Icon as={Leaf} size={32} />
@@ -285,6 +292,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
   );
   const PracticeRow = ({ p }) => (
     <Row
+      image={practiceVisual(p)}
       title={p.title}
       tag={`${mediaKind(p)} · ${p.access}`}
       sub={`${p.time} мин · ${p.level} · ${p.author}`}
@@ -294,6 +302,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
   );
   const CourseRow = ({ c }) => (
     <Row
+      image={courseVisual(c)}
       title={c.title}
       tag={`${c.format}${c.city ? " · " + c.city : ""}`}
       sub={`${c.author} · ${c.duration} · ${money(c.price)}`}
@@ -569,8 +578,11 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
         </Button>
       </>
     );
+  const immersive = ["player", "lesson", "plan"].includes(route);
+  const roomVisual = route === "lesson" ? courseVisual(course) : route === "player" ? practiceVisual(item) : "fabric";
   return (
-    <div className="app-device" data-testid="device-screen">
+    <div className={"app-device" + (immersive ? " photo-room" : "")} data-testid="device-screen">
+      {immersive && <img className="room-backdrop" src={visuals[roomVisual].src} alt="" decoding="async" />}
       <div className="app-scroll" ref={scroll}>
         <div className="brand-switch" aria-label="Направление">
           {["SATTVA", "YOG"].map((b) => (
@@ -597,6 +609,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
         <div className="app-content v2-content" key={route}>
           {route === "home" && brand === "SATTVA" && (
             <>
+              <PhotoScene kind="yoga">
               <h1 className="home-title">
                 Вернуться
                 <br />к себе
@@ -606,6 +619,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 <br />
                 чтобы находить свой баланс.
               </p>
+              </PhotoScene>
               <h3 className="mood-question">Как вы хотите себя чувствовать?</h3>
               <div className="mood-list">
                 {["Спокойнее", "Бодрее", "Собраннее"].map((g) => (
@@ -626,7 +640,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 className="featured-practice"
                 onClick={() => openPractice(practices[0])}
               >
-                <Art />
+                <Art kind="ritual" />
                 <div>
                   <span>
                     <strong>Тишина внутри</strong>
@@ -663,6 +677,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 }}
               />
               <div className="editorial-block">
+                <Art kind="spa" />
                 <span className="eyebrow">САНКТ-ПЕТЕРБУРГ · 26–29 НОЯБРЯ</span>
                 <h3>Четыре дня баланса</h3>
                 <p>
@@ -691,6 +706,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
           )}
           {route === "home" && brand === "YOG" && (
             <>
+              <PhotoScene kind="tea">
               <h1 className="home-title">
                 Внешнее —<br />
                 со смыслом.
@@ -700,7 +716,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 <br />
                 красота встречается с заботой.
               </p>
-              <Art kind="botanical" />
+              </PhotoScene>
               {["Для близких", "Для команды", "Для бренда"].map((k) => (
                 <Row
                   key={k}
@@ -816,7 +832,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
               <p className="app-subtitle">
                 Несколько способов быть ближе к себе.
               </p>
-              <Art kind="botanical" />
+              <Art kind="movement" />
               <div className="search">
                 <Icon as={MagnifyingGlass} />
                 <input
@@ -888,7 +904,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 title={item.title}
                 sub={`${mediaKind(item)} · ${item.time} минут · ${item.level}`}
               />
-              <Art />
+              <Art kind={practiceVisual(item)} />
               <p>{item.text}</p>
               <div className="info-list">
                 <p>
@@ -956,7 +972,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                   (item.media === "Видео" ? "video-preview" : "")
                 }
               >
-                <Art />
+                <Art kind={practiceVisual(item)} />
                 <button
                   className="play-round large"
                   aria-label={playing ? "Пауза" : "Начать"}
@@ -1035,7 +1051,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
               <p className="app-subtitle">
                 От первой недели медитации — до живого погружения.
               </p>
-              <Art kind="linen" />
+              <Art kind="flow" />
               <div className="search">
                 <Icon as={MagnifyingGlass} />
                 <input
@@ -1106,7 +1122,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 {course.city && <span>{course.city}</span>}
                 <span>Доступ: {course.access}</span>
               </div>
-              <Art />
+              <Art kind={courseVisual(course)} />
               <p className="serif-small">{course.summary}</p>
               {course.dates && (
                 <div className="info-list">
@@ -1251,6 +1267,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                     <Row
                       key={m}
                       title={m}
+                      image={i % 2 ? "water" : courseVisual(course)}
                       sub={`Урок ${i + 1} · ${lessonsDone.includes(i) ? "Завершён" : "Можно начать"}`}
                       icon={lessonsDone.includes(i) ? CheckCircle : Play}
                       onClick={() => {
@@ -1277,9 +1294,15 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 sub={`${course.title} · Урок ${lesson + 1} из ${course.modules.length}`}
               />
               <div className="media-preview video-preview">
-                <Art />
-                <Icon as={VideoCamera} size={36} />
-                <span>Демонстрационный видеоурок</span>
+                <Art kind={courseVisual(course)} />
+                <button
+                  className="play-round large"
+                  aria-label={playing ? "Пауза демонстрации урока" : "Начать демонстрацию урока"}
+                  onClick={() => setPlaying(!playing)}
+                >
+                  <Icon as={playing ? Pause : Play} size={27} weight="fill" />
+                </button>
+                <span>{playing ? "Демонстрация урока идёт" : "Демонстрационный видеоурок"}</span>
               </div>
               <h3>Начните с простого</h3>
               <p>
@@ -1594,7 +1617,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 title={session.title}
                 sub={`${session.format} · ${session.level}`}
               />
-              <Art />
+              <Art kind="yoga" />
               <div className="info-list">
                 <p>
                   <Icon as={CalendarBlank} />
@@ -2132,7 +2155,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 title={event.title}
                 sub={`${event.segment} · ${event.people}`}
               />
-              <Art />
+              <Art kind="bowl" />
               <p>{event.text}</p>
               <div className="summary-line">
                 <span>{event.duration}</span>

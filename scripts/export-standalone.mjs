@@ -4,15 +4,16 @@ let html = readFileSync("dist/index.html", "utf8");
 const js = html.match(/<script[^>]*src="([^"]+)"[^>]*><\/script>/)[1];
 const css = html.match(/<link[^>]*href="([^"]+\.css)"[^>]*>/)[1];
 const stylesheet = readFileSync("dist/" + css.replace(/^\.\//, ""), "utf8")
-  .replace(/url\(([^)]+\.(?:ttf|jpg))\)/g, (_, assetPath) => {
+  .replace(/url\(([^)]+\.(?:ttf|jpg|webp))\)/g, (_, assetPath) => {
     const asset = readFileSync(resolve("dist", dirname(css), assetPath));
-    const mime = assetPath.endsWith('.ttf') ? 'font/ttf' : 'image/jpeg';
+    const mime = assetPath.endsWith('.ttf') ? 'font/ttf' : assetPath.endsWith('.webp') ? 'image/webp' : 'image/jpeg';
     return `url(data:${mime};base64,${asset.toString("base64")})`;
   });
 let code = readFileSync("dist/" + js.replace(/^\.\//, ""), "utf8");
-code = code.replace(/new URL\("([^"/]+\.jpg)",import\.meta\.url\)\.href/g, (_, file) => {
+code = code.replace(/new URL\("([^"/]+\.(?:jpg|webp))",import\.meta\.url\)\.href/g, (_, file) => {
   const data = readFileSync(resolve("dist", dirname(js), file));
-  return JSON.stringify(`data:image/jpeg;base64,${data.toString('base64')}`);
+  const mime = file.endsWith('.webp') ? 'image/webp' : 'image/jpeg';
+  return JSON.stringify(`data:${mime};base64,${data.toString('base64')}`);
 });
 for (const file of [
   "contour.png",
