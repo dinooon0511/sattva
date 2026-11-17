@@ -22,5 +22,6 @@ try{
  for(const [width,height]of[[375,667],[390,844],[844,390],[768,1024]])await fit(width,height);
  await page.goto(url+'#flows');await page.reload();await expect(page.locator('.sidebar,.full-document,.guide')).toHaveCount(0);await expect(app.getByRole('heading',{name:'Вернуться к себе'})).toBeVisible();
  await page.goto(base);await expect(page.locator('.sidebar')).toBeVisible();await expect(page.getByRole('link',{name:'Только приложение'})).toHaveAttribute('href','./app.html');
+ await app.locator('img').evaluateAll(is=>Promise.all(is.map(i=>i.decode())));await page.evaluate(()=>document.fonts.ready);await page.unrouteAll({behavior:'wait'});
  expect(errors).toEqual([]);console.log('PASS mobile-only page: full viewport, no workspace UI, touch navigation, video and lessons, favorites persist after reload, YOG projects, portrait/landscape/tablet, main workspace preserved; no console/runtime/asset errors.');
 }finally{await browser.close()}
