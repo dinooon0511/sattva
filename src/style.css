@@ -2789,3 +2789,48 @@ summary:focus-visible {
     padding-top: 32px;
   }
 }
+
+/* Curated, text-free imagery from the YOG moodboard. Text stays outside photos. */
+.photo-panel {
+  display: block;
+  overflow: hidden;
+  margin: 22px 0;
+  background: var(--milk);
+}
+.photo-panel img.content-photo {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin: 0;
+  object-fit: cover;
+  /* Warm milk beneath the photograph keeps its darkest areas out of black. */
+  filter: sepia(0.08);
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+.photo-panel[data-visual="botanical"] .content-photo {
+  height: 210px;
+  object-position: 50% 28%;
+}
+.photo-panel[data-visual="linen"] .content-photo {
+  height: 140px;
+}
+.photo-panel[data-visual="oliveSurface"] {
+  margin-top: 0;
+}
+.photo-panel[data-visual="oliveSurface"] .content-photo {
+  height: 90px;
+}
+.featured-practice .photo-panel {
+  margin: 12px 0;
+}
+.featured-practice .photo-panel .content-photo {
+  height: 100px;
+  object-position: 50% 65%;
+}
+.guide-note {
+  background-image: url("./assets/folded-paper.jpg");
+  background-size: cover;
+  background-color: var(--ivory);
+  background-blend-mode: soft-light;
+}

@@ -1,0 +1,309 @@
+{
+  "board": "https://www.pinterest.com/fkngssip/yog/",
+  "scope": "publicly exposed subset; completeness unknown",
+  "count": 24,
+  "sources": [
+    {
+      "url": "https://www.pinterest.com/fkngssip/yog/",
+      "response_received": false
+    },
+    {
+      "url": "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+      "response_received": true
+    },
+    {
+      "url": "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss",
+      "response_received": true
+    }
+  ],
+  "images": [
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/8d/3c/eb/8d3ceb9001b4c838e35daf656662294e.jpg",
+      "file": "8d3ceb9001b4c838e35daf656662294e.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "selected: no visible lettering or marks",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShwf5fLxwy-VnJW5Pcg19S4pw15KioC_5k3Y-eF4KJ9jX9jY/",
+      "downloaded": true,
+      "application_file": "src/assets/olive-surface.jpg",
+      "description": "Оливковая фактура"
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/ba/1b/11/ba1b1100fd64fef8490a359761a2d3e3.jpg",
+      "file": "ba1b1100fd64fef8490a359761a2d3e3.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShxYxcYUM3b986X6TNCYud1cPV_2zdiTH1NrgzvaWt_nXOjd/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/ed/90/e7/ed90e73ad91c5988ed6e37bde4aea37c.jpg",
+      "file": "ed90e73ad91c5988ed6e37bde4aea37c.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShw7CBEnCPDGiDBHNJ1E7yNMomxRq7WUslW_b-_4eQjrxsHK/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/ef/6c/e8/ef6ce83607c4c89f3ea698acb72d4872.jpg",
+      "file": "ef6ce83607c4c89f3ea698acb72d4872.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "selected: no visible lettering or marks",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzL37D8eIAAtQ0-QHxR6Hfmgdna3rbbWdJSpAEDK5FUGVSC/",
+      "downloaded": true,
+      "application_file": "src/assets/milk-linen.jpg",
+      "description": "Светлая ткань"
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/a0/3e/1b/a03e1b86e0ec77b4b672610283931387.jpg",
+      "file": "a03e1b86e0ec77b4b672610283931387.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShxgW6JtgASixDbzCXk7c2ODorIU0A8xMutyeehhLxbslGOl/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/34/3b/58/343b5883500e7ddb62d360b9a7399bd7.jpg",
+      "file": "343b5883500e7ddb62d360b9a7399bd7.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "selected: no visible lettering or marks",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyDEvzlwML4L-tzgOKaHKjYujVMzZjNkeQ-pFV-ppFM6iwJ/",
+      "downloaded": true,
+      "application_file": "src/assets/folded-paper.jpg",
+      "description": "Бумага со складками"
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/20/f7/d6/20f7d677a208e5a72ee3343cc1108f20.jpg",
+      "file": "20f7d677a208e5a72ee3343cc1108f20.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzaz7uYoCkgwDgkf63EErQiXLYQFf98gvHsXzbAfGQH7B8a/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/c3/db/fd/c3dbfd3630edf1d6ba98140e46f34c7e.jpg",
+      "file": "c3dbfd3630edf1d6ba98140e46f34c7e.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShxUiWNZFsF7b9tclW_WQkFADIavmg9JqM9aXpKWZtotAs1Q/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/00/77/69/0077690519f2ebbd8a07cb0b5aa20dde.jpg",
+      "file": "0077690519f2ebbd8a07cb0b5aa20dde.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShxu17N_Lp_QuRNsjMJeNwhvwH7QVhfXbwn4xRIpYbpQF_Oh/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/44/04/7f/44047f73392cb41bad260f726003b85d.jpg",
+      "file": "44047f73392cb41bad260f726003b85d.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "selected: no visible lettering or marks",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyIA9dkuueSMwNS_eBqEOuUdsHAQBWJmgP-0GeAV1ZJQwoq/",
+      "downloaded": true,
+      "application_file": "src/assets/soft-light.jpg",
+      "description": "Оливковые тени и рассеянный свет"
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/ea/14/a9/ea14a9f4a35a91516ea4ce2052e5dd56.jpg",
+      "file": "ea14a9f4a35a91516ea4ce2052e5dd56.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShywv6wQ2YE_z4VM_ScWinGqXKZmyVxZhZBL6X4sbBiX7JwO/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/c2/5d/a8/c25da80a161d4de7259b3d7b40129ca0.jpg",
+      "file": "c25da80a161d4de7259b3d7b40129ca0.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShxqvTQ3VE94uE9HW9TT9hSgjz4m2arNaobVg_e9yvxFl8O1/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/85/ff/9c/85ff9c1e18bfe23cd99cd81f913237fd.jpg",
+      "file": "85ff9c1e18bfe23cd99cd81f913237fd.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyAjpbmI7D3Xch0oKBWfeQLXOwT_QE8jt0FA_OCOERH-cAA/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/7f/75/c4/7f75c4ddd847411166f92195d8a5b7f8.jpg",
+      "file": "7f75c4ddd847411166f92195d8a5b7f8.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog/",
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzSOgU4PXGsbpTk_ZwgJdLoxej9IY_PvdtdUpEetQsD2-y5/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/41/bb/cb/41bbcb1c141958b5d2be15f9e14734d8.jpg",
+      "file": "41bbcb1c141958b5d2be15f9e14734d8.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "selected: no visible lettering or marks",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzMdXdlfEvclvMhBGP6IXRogfOrVNOns_-d45IZqYkledB_/",
+      "downloaded": true,
+      "application_file": "src/assets/green-flower.jpg",
+      "description": "Зелёный цветок"
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/a2/12/ae/a212ae95a8ed7aa87b3e00b7d0f4356c.jpg",
+      "file": "a212ae95a8ed7aa87b3e00b7d0f4356c.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyQlVXhEOx-dwb3FZqSYPGpZt5Vh5W0u-RyXbaMKnuPsUYf/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/f7/64/37/f76437fb1a1f9f16f2cf614899a14265.jpg",
+      "file": "f76437fb1a1f9f16f2cf614899a14265.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzIW2l-V6C7InoAKDcFRcq7mO4FTNkYlZ9uUtuDA-Ju-o-B/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/bb/e1/a5/bbe1a53118cb69a49068626ae9934d41.jpg",
+      "file": "bbe1a53118cb69a49068626ae9934d41.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzk3-n9_tlix7Zy1EWIj09K5XkU9WE4kw76oJuNAY7ckbAc/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/63/86/2b/63862ba2312f4523fd72c3cd554ab920.jpg",
+      "file": "63862ba2312f4523fd72c3cd554ab920.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyp7_2XQ8-22c7bvk5jBt0OZQ-uSdX4dE9uxUElgqRd_nqo/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/68/93/5a/68935a69cb2da93928baf33d749ea18d.jpg",
+      "file": "68935a69cb2da93928baf33d749ea18d.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShy6LAaHx-_-FYN8knaz28pW58grY46urRhR5VsNyIH8wV3j/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/78/be/bc/78bebc36e3850adfd4c812c8ff1c440e.jpg",
+      "file": "78bebc36e3850adfd4c812c8ff1c440e.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShyaaBuinGE8SfUXDk1IknSAgWHoDx3QsO-Z-kgmy4GO6yTC/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/76/32/f6/7632f67e2f978cba6f38570c654f01db.jpg",
+      "file": "7632f67e2f978cba6f38570c654f01db.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShy1u8ffpt-hKOnZS3s_7YZEb3Y-Z8mOBoK6hEKrPo3WVboQ/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/f0/fa/ff/f0faff4ab346cefffad25ca5ca70bd50.jpg",
+      "file": "f0faff4ab346cefffad25ca5ca70bd50.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShx_NstYSLni6JG23hFrMJF-MWwKongQtRCKWRQ0KpXTnCyT/",
+      "downloaded": true
+    },
+    {
+      "board": "https://www.pinterest.com/fkngssip/yog/",
+      "image": "https://i.pinimg.com/736x/88/79/7c/88797c772a90a3f5cada70373caf8641.jpg",
+      "file": "88797c772a90a3f5cada70373caf8641.jpg",
+      "sources": [
+        "https://r.jina.ai/https://www.pinterest.com/fkngssip/yog.rss"
+      ],
+      "review": "not selected: text, logos, illustration, or unsuitable subject/palette",
+      "pin": "https://www.pinterest.com/pin/e1_AfqPShzgxZyMOpMKTINvay8cS_5zQYStCnCI_YjK3l4PFMGnqiI9/",
+      "downloaded": true
+    }
+  ]
+}

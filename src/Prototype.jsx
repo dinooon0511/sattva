@@ -33,6 +33,7 @@ import {
   plans,
   rituals,
 } from "./product";
+import { visuals } from "./visuals";
 const Icon = ({ as: C, ...props }) => (
   <C size={21} weight="light" aria-hidden="true" {...props} />
 );
@@ -86,7 +87,14 @@ const Chips = ({ items, value, onChange, label }) => (
     ))}
   </div>
 );
-const Art = () => <img className="contour" src="./contour.png" alt="" />;
+const Art = ({ kind }) => {
+  const image = visuals[kind];
+  return image ? (
+    <span className="photo-panel" data-visual={kind}>
+      <img className="contour content-photo" src={image.src} alt={image.alt} decoding="async" />
+    </span>
+  ) : <img className="contour" src="./contour.png" alt="" />;
+};
 const Empty = ({ title, text, action, onClick }) => (
   <div className="empty">
     <Icon as={Leaf} size={32} />
@@ -618,7 +626,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 className="featured-practice"
                 onClick={() => openPractice(practices[0])}
               >
-                <Art />
+                <Art kind="softLight" />
                 <div>
                   <span>
                     <strong>Тишина внутри</strong>
@@ -655,6 +663,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 }}
               />
               <div className="editorial-block">
+                <Art kind="oliveSurface" />
                 <span className="eyebrow">САНКТ-ПЕТЕРБУРГ · 26–29 НОЯБРЯ</span>
                 <h3>Четыре дня баланса</h3>
                 <p>
@@ -692,7 +701,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 <br />
                 красота встречается с заботой.
               </p>
-              <Art />
+              <Art kind="botanical" />
               {["Для близких", "Для команды", "Для бренда"].map((k) => (
                 <Row
                   key={k}
@@ -808,6 +817,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
               <p className="app-subtitle">
                 Несколько способов быть ближе к себе.
               </p>
+              <Art kind="botanical" />
               <div className="search">
                 <Icon as={MagnifyingGlass} />
                 <input
@@ -1026,6 +1036,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
               <p className="app-subtitle">
                 От первой недели медитации — до живого погружения.
               </p>
+              <Art kind="linen" />
               <div className="search">
                 <Icon as={MagnifyingGlass} />
                 <input

@@ -45,7 +45,9 @@ try {
     await expect(
       app.getByRole("heading", { name: "Вернуться к себе" }),
     ).toBeVisible();
-    await expect(app.locator(".contour")).toBeVisible();
+    await expect(app.locator(".featured-practice .content-photo")).toBeVisible();
+    await expect.poll(() => app.locator(".featured-practice .content-photo")
+      .evaluate((image) => image.complete && image.naturalWidth > 0)).toBe(true);
     await expect(app.locator(".app-bottom button")).toHaveCount(5);
     await app.screenshot({ path: "artifacts/v2-home.png" });
     await page.screenshot({ path: "artifacts/v2-desktop.png", fullPage: true });
