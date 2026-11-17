@@ -10,6 +10,8 @@ const stylesheet = readFileSync("dist/" + css.replace(/^\.\//, ""), "utf8")
     return `url(data:${mime};base64,${asset.toString("base64")})`;
   });
 let code = readFileSync("dist/" + js.replace(/^\.\//, ""), "utf8");
+// Keep the app-only link within the exported file instead of requiring app.html.
+code = code.replaceAll('"./app.html"', '"?app=1"');
 code = code.replace(/new URL\("([^"/]+\.(?:jpg|webp))",import\.meta\.url\)\.href/g, (_, file) => {
   const data = readFileSync(resolve("dist", dirname(js), file));
   const mime = file.endsWith('.webp') ? 'image/webp' : 'image/jpeg';

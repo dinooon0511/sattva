@@ -41,6 +41,7 @@ import cjmDoc from "../docs/03-cjm.md?raw";
 import jobDoc from "../docs/04-jtbd.md?raw";
 import "./style.css";
 import Prototype from "./Prototype";
+import MobileApp from "./mobile";
 import BusinessViews from "./BusinessViews";
 const I = ({ icon: Icon, ...p }) => (
   <Icon size={21} weight="light" aria-hidden="true" {...p} />
@@ -159,6 +160,9 @@ function App() {
               <div className="heading-row">
                 <h1>Почувствовать пространство</h1>
                 <div className="toolbar">
+                  <a href="./app.html" target="_blank" rel="noopener noreferrer" className="app-only-link">
+                    Только приложение <I icon={ArrowSquareOut} size={16} />
+                  </a>
                   <button
                     title="Начать заново"
                     aria-label="Начать заново"
@@ -638,4 +642,7 @@ function Research({ section, openScenario }) {
     </div>
   );
 }
-createRoot(document.getElementById("root")).render(<App />);
+const appOnly = location.pathname.endsWith("/app.html") ||
+  new URLSearchParams(location.search).get("app") === "1";
+document.body.classList.toggle("standalone-body", appOnly);
+createRoot(document.getElementById("root")).render(appOnly ? <MobileApp /> : <App />);
