@@ -626,7 +626,7 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 className="featured-practice"
                 onClick={() => openPractice(practices[0])}
               >
-                <Art kind="softLight" />
+                <Art />
                 <div>
                   <span>
                     <strong>Тишина внутри</strong>
@@ -663,7 +663,6 @@ export default function Prototype({ route, setRoute, brand, setBrand }) {
                 }}
               />
               <div className="editorial-block">
-                <Art kind="oliveSurface" />
                 <span className="eyebrow">САНКТ-ПЕТЕРБУРГ · 26–29 НОЯБРЯ</span>
                 <h3>Четыре дня баланса</h3>
                 <p>

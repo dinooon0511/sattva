@@ -2834,3 +2834,90 @@ summary:focus-visible {
   background-color: var(--ivory);
   background-blend-mode: soft-light;
 }
+
+/* Softer surfaces: rounded cards, pill controls and readable milk glass. */
+:root {
+  --radius-card: 28px;
+  --radius-control: 999px;
+  --glass: rgba(255, 253, 246, 0.94);
+  --glass-border: rgba(255, 253, 246, 0.88);
+}
+.app-device,
+.prototype-stage {
+  border-radius: 32px;
+}
+.brand-switch,
+.brand-switch button,
+.primary,
+.secondary,
+.olive-button,
+.chips button,
+.research-chips button,
+.course-facts span {
+  border-radius: var(--radius-control);
+}
+.side-link,
+.flow-menu button,
+.toolbar button {
+  border-radius: 18px;
+}
+.side-link.active {
+  border-radius: var(--radius-control);
+}
+.photo-panel,
+.editorial-block,
+.membership-active,
+.cancel-panel,
+.plan-card,
+.media-preview,
+.guide-note {
+  border-radius: var(--radius-card);
+}
+.photo-panel,
+.media-preview {
+  overflow: hidden;
+}
+.editorial-block,
+.membership-active,
+.cancel-panel,
+.guide-note {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.app-bottom,
+.purchase-dock {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.app-bottom button {
+  border-radius: 18px;
+}
+.mood-list button {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  padding: 10px 14px;
+  margin: 8px 0;
+}
+input:not([type="checkbox"]):not([type="range"]),
+select,
+textarea,
+.search {
+  border-radius: 18px;
+}
+.completed-projects li {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+@supports not (backdrop-filter: blur(18px)) {
+  .editorial-block,
+  .membership-active,
+  .cancel-panel,
+  .guide-note,
+  .app-bottom,
+  .purchase-dock {
+    background: var(--milk);
+  }
+}
